@@ -66,4 +66,4 @@ function makeObject(name, subject)
 
 obj1=new makeObject("muqaddas","web")
 obj2=new makeObject("zahra","app")
-console.log(obj1 instanceof makeObject);
+console.log(obj1 instanceof makeObject); //true

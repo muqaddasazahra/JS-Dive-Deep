@@ -2,7 +2,7 @@ const students=["Zahra","Areeba","Zainab","Kalsoom","Aleena"]
 
 console.log(students.length);  //5
 console.log(students[2]); //Zainab
-console.log(students[-1]); /*undefiend --> as [value] is the way to access properties in objects its tries to access value of key -1 which doesn't exist
+console.log(students[-1]); /*undefined --> as [value] is the way to access properties in objects its tries to access value of key -1 which doesn't exist
                              solved with at() to retrieve last element*/
 
 
@@ -16,7 +16,7 @@ console.log(students.toString().length); //32
 
 //sort()->sorts an array alphabetically
 console.log(students.sort());  //['Aleena', 'Amna', 'Areeba', 'Kalsoom', 'Zahra']
-console.log(students);    //origin array is same as the sorted array now 
+console.log(students);    //original array is same as the sorted array now 
 
 //looping array elements
 function changeArray(value)  //value param receives array elements
@@ -65,7 +65,7 @@ console.log(fruits.summer);     /*Mango  ->array has been redefined as object bc
 
 //new Array
 const numbers=[10,20]
-const newnumbers=new Array(10,20,30) //creates array with two elements
+const newnumbers=new Array(10,20,30) //creates array with three elements
 const unusualArray=new Array(10) //unlike above, doesn't create array with one element, creates array with 10 undefined elements
 console.log(unusualArray);    //10 undefined elements array- empty array
 console.log(unusualArray[0]); //undefined
@@ -86,7 +86,7 @@ console.log(students.toString().length);  //39 returned not array elements count
 
 
 //----------------at()-->returns value at index-------------------------
-console.log(students);//Aleena,Amna,Areeba,Kalsoom,Zahra,,Atiqa
+console.log(students);//Aleena,Amna,Areeba,Kalsoom,Zahra, ,Atiqa
 console.log(students.at(2)); //Areeba
 console.log(students.at(-1)); //Atiqa -->last element
 console.log(students.at(-3)); //zahra -->counting from last with last element index as -1
@@ -170,7 +170,7 @@ console.log(students.copyWithin(0,2,4));
 //array:['Kalsoom', 'Zahra', 'Kalsoom', 'Zahra', 'Zahra']
 console.log(students.slice(2,4)); //['Kalsoom', 'Zahra'] extracted from positions 2 upto 4 , 4 not included
 console.log(students.slice(1)); //['Zahra', 'Kalsoom', 'Zahra', 'Zahra'] extract all elements starting from position 1 
-console.log(students); //students arrays stays as before splice ['Kalsoom', 'Zahra', 'Kalsoom', 'Zahra', 'Zahra']
+console.log(students); //students arrays stays as before slice ['Kalsoom', 'Zahra', 'Kalsoom', 'Zahra', 'Zahra']
 
 
 //splice()
@@ -196,7 +196,8 @@ students.splice(1,3,"Malaika", "Fatima", "Tayaba")
 console.log(students); //['Kalsoom', 'Malaika', 'Fatima', 'Tayaba', 'Zahra']
 
 
-//toSpliced()---->different eith splice in a way that it doesn't alter original array
+//toSpliced()---->returns string without extracted part
+//different with splice in a way that it doesn't alter original array
 console.log(students.toSpliced(1,2)); ['Kalsoom', 'Tayaba', 'Zahra']
 console.log(students);     //original array remained unchanged
 

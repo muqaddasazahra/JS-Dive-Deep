@@ -20,7 +20,7 @@ console.log(string1==string2); //false, objects are compared by reference
 
 let string="Zahra"
 console.log(string==string1);  //equal in value
-console.log(string===string1); //not equal in type , obj1 is of object type
+console.log(string===string1); //not equal in type , string1 is of object type
 
 
 //----------------------------------------------String Comparison---------------------------------------------
@@ -51,7 +51,7 @@ console.log("Muqaddas".at(-1));  //s --starts from end ---> last letter -1
 console.log("Muqaddas".charAt(-3)); //empry string
 console.log("Muqaddas".at(-3));  //d --starts from end ---> last letter -1
 console.log("Muqaddas".at(-6));  //q --starts from end ---> last letter -1
-console.log("Muqaddas".at(-9));  //undefined
+console.log("Muqaddas".at(-9));  //undefined----when there is no letter available counting in reverse (starting from -1)
 
 
 console.log(string.charAt(5));  //empty
@@ -80,11 +80,17 @@ console.log(stringToSlice.slice(-3,-6)); //empty string----can't print in revers
 console.log(stringToSlice.substring(-3,-6)); //empty string---- -ve value is treated as 0 in substring 
 
 console.log(stringToSlice.slice(-6, -3)); //kis --> starts from end with last letter starting at -1
+console.log(stringToSlice.slice(-6, 3)); //empty string -->  ending index 2 comes before starting index -6. starts from end with last letter starting at -1,
+console.log(stringToSlice.slice(-6, 16)); //kis --> starts from end with last letter starting at -1 , ends at index 15(16 not included) starting from index 0
 console.log(stringToSlice.substr(-6, -3)); //empty string
+console.log(stringToSlice.substr(-6, 3)); //kis
 
-console.log(stringToSlice.slice(-6,2)); //empty string  --can't roll back 
+console.log(stringToSlice.slice(-6,2)); //empty string  -ending index 2 comes before starting index -6 , no letters exist in that range
 console.log(stringToSlice.substring(-6,2)); //My ---> -ve values treated as 0 in substring 
-console.log(stringToSlice.slice(-6,0)); //empty string---can't roll back
+console.log(stringToSlice.slice(-6,0)); //empty string---
+
+console.log("zahra".slice(-9,3)); //zah  --minus values that are greater than the existing number of letters are treted as starting index 0
+console.log("zahra".slice(-9,-1)); //zahr  ---treated as (0,-1) --minus values that are greater than the existing number of letters are treted as starting index 0
 
 
 //-------------------------------trim-- removes white spaces-------------------------
@@ -118,7 +124,7 @@ console.log(stringToPad.padEnd(17, true));   //Pakistantruetruet
 //---------------------------------------repeat------------------------------
 
 //return number of copies of string----string.repeat(count)
-console.log("Pakistan".repeat(3));
+console.log("Pakistan".repeat(3)); //PakistanPakistanPakistan
 
 //------------------------------------replace and replaceAll---------------------------------
 
@@ -139,3 +145,5 @@ console.log("Pakistan is my country".split(" ")); //['Pakistan', 'is', 'my', 'co
 console.log("Pakistan is , my country".split(",")); //['Pakistan is ', ' my country']] (2)
 console.log("Pakistan is , my country".split()); //['Pakistan is , my country']  (1) param missing, stores whole string at index 0
 console.log("Pakistan is , my country".split("")); //array of single characters
+
+
