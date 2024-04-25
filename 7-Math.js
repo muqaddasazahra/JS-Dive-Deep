@@ -64,4 +64,26 @@ console.log(Math.random()*(64-32)); //64-32=32  Range 0 upto 31 (32 not included
 console.log(Math.random()*(64-32+1)); //previously, range was 0-31, adding 1 range becomes 0-32
 console.log(Math.random()*(64-32+1)+32); //range was 0-32, adding 32 to each digit will give 32-64
 console.log(Math.floor(Math.random()*(64-32+1)+32)); //rounding down to closest integer
+
+
+//toFixed --> forats a number using fixed point notation , returns a string
+console.log(2.2556.toFixed(2)); //2.26
+console.log(-2.2556.toFixed(2)); //-2.26
+console.log(0.004.toFixed(2)); //0.00
+console.log(0.005.toFixed(2)); //0.01
+console.log(0.005.toFixed(2)); //0.01
+console.log(1.23e+5.toFixed(2)); //123000.00
+console.log(2.334.toFixed(2)); //2.33
+console.log(1.2323e5.toFixed(2)); //123230.00
+console.log(-1.2323e5.toFixed(2)); //-123230
+console.log((-1.2323e5).toFixed(2)); //-123230.00 -->grouping the negative number expression will give right results (-??).toFixed(?) instead of -??.toFixed(?)
+console.log(1.2323e-5.toFixed(2)); //0.00 ---> after resolving notation 0.00012323 then fixing it with two points after decimal-->0.00
+console.log(-1.2323e-5.toFixed(2)); //-0
+console.log((-1.2323e-5).toFixed(2)); //-0.00
+console.log(-2.34.toFixed(1)); //-2.3 //a number
+console.log((-2.34).toFixed(1)); //-2.3 a string
+
+
+
+
                                           
