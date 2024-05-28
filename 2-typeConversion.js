@@ -8,6 +8,9 @@ console.log(typeof numberToString); //string
 console.log(String(1+2)); //3
 console.log(typeof String(1+2)); //string 
 
+console.log(String(null));       //"null"--> a string
+console.log(typeof String(undefined));  //"undefined"-->a string
+
 
 
 //-------------------------Convert to Numbers--------------------------------

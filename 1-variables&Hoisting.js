@@ -45,13 +45,13 @@ const number=10;
 //-------------------------Block and Function Scope-----------------------------------------------------------------------------
 
 let letscopecheck=1
-var varscope=2
+
 if(true)
 {
     let letscope=2;
     letscope++;
 
-    let letscopecheck=1;
+    let letscopecheck=2;
     letscopecheck++;
 
     var varscope=2;

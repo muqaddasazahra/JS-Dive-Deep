@@ -38,6 +38,9 @@ console.log("zahra" > "zaara");  //true za same , h>a  ---> compared letter alph
 
 //-----------------------------charAt &at --------------------------
 
+//      empty    <---------charAt---------->empty
+// reverse String<-----------at------------>undefined
+
 console.log("..............................");
 console.log("Muqaddas".charAt(3));  //a
 console.log("Muqaddas".at(7));  //s
@@ -53,14 +56,21 @@ console.log("Muqaddas".at(-3));  //d --starts from end ---> last letter -1
 console.log("Muqaddas".at(-6));  //q --starts from end ---> last letter -1
 console.log("Muqaddas".at(-9));  //undefined----when there is no letter available counting in reverse (starting from -1)
 
-
+//string-->zahra
 console.log(string.charAt(5));  //empty
 console.log(string[5]);   //undefined    
+console.log(string[4]);   //a   
 string[0]="A";           //doesn't work--- property access is read only
 console.log(string);
 
 
 //-------------------------------------Extracting Parts of String (slice, substring, substr)--------------------------
+
+// slice-------> -ve values reverse string
+// substring---> -ve values treated as 0
+// substr------> second arg is length. if length -ve, empty string
+
+// slice % substring ---> ending index value is not extracted
 
 let stringToSlice="MyCountryIsPakistan"
 console.log(stringToSlice.slice(3,7)); //ount -- end is not included
@@ -68,9 +78,12 @@ console.log(stringToSlice.substring(3,7)); //ount -- end is not included
 console.log(stringToSlice.substr(3,7)); //ountryI -->second param tells lenght of string
 
 console.log(stringToSlice.slice(3)); // ountryIsPakistan---? starting from index 3, all remaining string
+console.log(stringToSlice.substring(3)); // ountryIsPakistan---? starting from index 3, all remaining string
+console.log(stringToSlice.substr(3)); // ountryIsPakistan---? starting from index 3, all remaining string
 
 console.log(stringToSlice.slice(20)); // empty string
 console.log(stringToSlice.substring(20)); // empty string
+console.log(stringToSlice.substr(20)); // empty string
 
 console.log(stringToSlice.slice(-3)); //tan---> starts from end with last letter starting at -1
 console.log(stringToSlice.substr(-3)); //tan---> starts from end with last letter starting at -1
@@ -82,7 +95,7 @@ console.log(stringToSlice.substring(-3,-6)); //empty string---- -ve value is tre
 console.log(stringToSlice.slice(-6, -3)); //kis --> starts from end with last letter starting at -1
 console.log(stringToSlice.slice(-6, 3)); //empty string -->  ending index 2 comes before starting index -6. starts from end with last letter starting at -1,
 console.log(stringToSlice.slice(-6, 16)); //kis --> starts from end with last letter starting at -1 , ends at index 15(16 not included) starting from index 0
-console.log(stringToSlice.substr(-6, -3)); //empty string
+console.log(stringToSlice.substr(-6, -3)); //empty string  , lenght -ve --> empty string
 console.log(stringToSlice.substr(-6, 3)); //kis
 
 console.log(stringToSlice.slice(-6,2)); //empty string  -ending index 2 comes before starting index -6 , no letters exist in that range
@@ -90,6 +103,7 @@ console.log(stringToSlice.substring(-6,2)); //My ---> -ve values treated as 0 in
 console.log(stringToSlice.slice(-6,0)); //empty string---
 
 console.log("zahra".slice(-9,3)); //zah  --minus values that are greater than the existing number of letters are treted as starting index 0
+console.log("zahra".substr(-9,3)); //zah  --minus values that are greater than the existing number of letters are treted as starting index 0
 console.log("zahra".slice(-9,-1)); //zahr  ---treated as (0,-1) --minus values that are greater than the existing number of letters are treted as starting index 0
 
 
@@ -134,9 +148,11 @@ console.log(stringToReplace.replace("Pakistan","Kashmir")); //Kashmir is Pakista
 console.log(stringToReplace.replace(/Pakistan/g,"Kashmir")); //Kashmir is Kashmir ----Re with flag /g to replace all matches
 console.log(stringToReplace.replace("PAKISTAN","Kashmir")); //Pakistan is Pakistan ----case sensitive-- PAKISTAN didn't match with Pakistan
 console.log(stringToReplace.replace(/PAKISTAN/i,"Kashmir")); //Kashmir is Pakistan -----Re with flag /i to avoid case sensitivity
+console.log(stringToReplace.replace(/PAKISTAN/ig,"Kashmir")); //Kashmir is Kashmir -----Re with flag /i to avoid case sensitivity and g to replace all matches
 console.log(stringToReplace.replace("Pakistan",9));         //9 is Pakistan
  
 console.log(stringToReplace.replaceAll("Pakistan", "Kashmir")); //Kashmir is Kashmir
+// console.log(stringToReplace.replaceAll("PAKISTAN/i", "Kashmir")); //error, replaceAll dont use flags directly, use replace with flags in this case
 
 
 //--------------------------------------split---converts to array--------------------------------------------

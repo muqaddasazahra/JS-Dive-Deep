@@ -36,7 +36,7 @@ console.log(null+5) //5 - null is converted to 0
 console.log(6+undefined) //NaN - undefiend is converted to NaN 
 
 
-//BigInt Addition, if any of the numbe risn't bigInt , error is thrown
+//BigInt Addition, if any of the number isn't bigInt , error is thrown
 console.log("------------------------------");
 console.log(1n+3n); //4n
 //console.log(1n+2)   error
@@ -56,7 +56,7 @@ console.log(typeof {a:1, b:2});  //object
 console.log(typeof [2,3,4]);     //object
 console.log(typeof function(){});  //function
 
-console.log(typeof(typeof true));  //typeof returns a string type value  - typeof true retured boolean (a string type "boolean")
+console.log(typeof(typeof true));  //string-->typeof returns a string type value  - typeof true retured boolean (a string type "boolean")
 
 function makeObject(name, subject)
 {
